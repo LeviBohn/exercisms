@@ -29,9 +29,11 @@ export function translate2d(dx, dy) {
  * @returns {function} a function which takes an x, y parameter, returns the
  *  scaled coordinate pair in the form [x, y]
  */
-export function scale2d(sx, sy) {
-  throw new Error('Implement the scale2d function');
-}
+ export function scale2d(sx, sy) {
+    return function(x,y) {
+      return [ x * sx, y * sy ];
+    };
+  }
 
 /**
  * Create a composition function that returns a function that combines two

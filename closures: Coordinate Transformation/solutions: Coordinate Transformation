@@ -67,12 +67,13 @@ export function translate2d(dx, dy) {
  */
 export function memoizeTransform(f) {
     let lastX = null;
-  let lastY = null;
-  let lastResult = null;
-  return function(x,y) {
-    if (x === lastX && y === lastY) {
-      return lastResult;
+    let lastY = null;
+    let lastResult = null;
+    return function(x,y) {
+        if (x === lastX && y === lastY) {
+        return lastResult;
     }
+    
     lastX = x;
     lastY = y;
     lastResult = f(x,y);

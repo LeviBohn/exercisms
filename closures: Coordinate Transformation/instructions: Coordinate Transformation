@@ -1,0 +1,17 @@
+Instructions
+Your design company has primarily been working with CSS transformations to build web pages. After some discussion, a decision is made to start using JavaScript to perform some calculations dynamically. Some of your teammates are less experienced with JavaScript, so you decide to use a function closure to create reusable transformation for {x, y} coordinate pairs.
+
+Implement the translate2d function that returns a function making use of a closure to perform a repeatable 2d translation of a coordinate pair.
+
+In Geometry, translation refers to moving points, vectors or shapes the same distance in one direction. It can be interpreted as addition of a constant to every point.
+
+const moveCoordinatesRight2Px = translate2d(2, 0);
+const result = moveCoordinatesRight2Px(4, 8);
+// result => [6, 8]
+
+Stuck? Reveal Hints
+Opens in a modal
+How to debug
+When a test fails, a message is displayed describing what went wrong and for which input. You can also use the fact that any console output will be shown too. You can write to the console using:
+
+console.log('Debug message');

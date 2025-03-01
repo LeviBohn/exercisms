@@ -6,18 +6,55 @@
  * you defined so they are available for the tests.
  */
 
-//prototype syntax...
-export function Size(width, height) {
+// task 1: define size for storing the dimensions of the window
+// prototype syntax...
+export function Size(width=80, height=60) {
     this.width = width;
     this.height = height;
   }
-
-// class syntax...
-// export class Size {
-//   constructor (width, height) {
-//     this.width = width;
-//     this.height = height;
-//   }
-// }
-
-
+  
+  Size.prototype.resize = function(newWidth, newHeight) {
+    this.width = newWidth;
+    this.height = newHeight;
+  }
+  
+  // task 1: define size for storing the dimensions of the window
+  // class syntax...
+  // export class Size {
+  //   constructor (width=80, height=60) {
+  //     this.width = width;
+  //     this.height = height;
+  //   }
+  
+  //   resize(newWidth, newHeight) {
+  //     this.width = newWidth;
+  //     this.height = newHeight;
+  //   }
+  // }
+  
+  
+  
+  // task 2: define position to store a window position
+  // prototype syntax...
+  export function Position(x=0, y=0){
+    this.x = x;
+    this.y = y;
+  }
+  
+  Position.prototype.move = function(newX, newY) {
+    this.x = newX;
+    this.y = newY;
+  };
+  
+  // task 2: define position to store a window position
+  // class syntax...
+  // export class Position {
+  //   constructor(x=0, y=0) {
+  //     this.x = x;
+  //     this.y = y;
+  //   }
+  //   move(newX, newY) {
+  //     this.x = newX;
+  //     this.y = newY;
+  //   }
+  // }

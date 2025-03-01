@@ -1,0 +1,23 @@
+// @ts-check
+
+/**
+ * Implement the classes etc. that are needed to solve the
+ * exercise in this file. Do not forget to export the entities
+ * you defined so they are available for the tests.
+ */
+
+//prototype syntax...
+export function Size(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+
+// class syntax...
+// export class Size {
+//   constructor (width, height) {
+//     this.width = width;
+//     this.height = height;
+//   }
+// }
+
+

@@ -58,3 +58,19 @@ export function Size(width=80, height=60) {
   //     this.y = newY;
   //   }
   // }
+
+
+
+// task 3: define a ProgramWindow class
+// class syntax...
+export class ProgramWindow {
+    screenSize;
+    size;
+    position;
+    
+    constructor () {
+      this.screenSize = new Size(800, 600);
+      this.size = new Size();
+      this.position = new Position();
+    }
+}

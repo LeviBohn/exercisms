@@ -8,56 +8,56 @@
 
 // task 1: define size for storing the dimensions of the window
 // prototype syntax...
-export function Size(width=80, height=60) {
+export function Size(width = 80, height = 60) {
     this.width = width;
     this.height = height;
-  }
-  
-  Size.prototype.resize = function(newWidth, newHeight) {
+}
+
+Size.prototype.resize = function (newWidth, newHeight) {
     this.width = newWidth;
     this.height = newHeight;
-  }
-  
-  // task 1: define size for storing the dimensions of the window
-  // class syntax...
-  // export class Size {
-  //   constructor (width=80, height=60) {
-  //     this.width = width;
-  //     this.height = height;
-  //   }
-  
-  //   resize(newWidth, newHeight) {
-  //     this.width = newWidth;
-  //     this.height = newHeight;
-  //   }
-  // }
-  
-  
-  
-  // task 2: define position to store a window position
-  // prototype syntax...
-  export function Position(x=0, y=0){
+}
+
+// task 1: define size for storing the dimensions of the window
+// class syntax...
+// export class Size {
+//   constructor (width=80, height=60) {
+//     this.width = width;
+//     this.height = height;
+//   }
+
+//   resize(newWidth, newHeight) {
+//     this.width = newWidth;
+//     this.height = newHeight;
+//   }
+// }
+
+
+
+// task 2: define position to store a window position
+// prototype syntax...
+export function Position(x = 0, y = 0) {
     this.x = x;
     this.y = y;
-  }
-  
-  Position.prototype.move = function(newX, newY) {
+}
+
+Position.prototype.move = function (newX, newY) {
     this.x = newX;
     this.y = newY;
-  };
-  
-  // task 2: define position to store a window position
-  // class syntax...
-  // export class Position {
-  //   constructor(x=0, y=0) {
-  //     this.x = x;
-  //     this.y = y;
-  //   }
-  //   move(newX, newY) {
-  //     this.x = newX;
-  //     this.y = newY;
-  //   }
-  // }
+};
+
+// task 2: define position to store a window position
+// class syntax...
+// export class Position {
+//   constructor(x=0, y=0) {
+//     this.x = x;
+//     this.y = y;
+//   }
+//   move(newX, newY) {
+//     this.x = newX;
+//     this.y = newY;
+//   }
+// }
 
 
 
@@ -67,11 +67,11 @@ export class ProgramWindow {
     screenSize;
     size;
     position;
-    
-    constructor () {
-      this.screenSize = new Size(800, 600);
-      this.size = new Size();
-      this.position = new Position();
+
+    constructor() {
+        this.screenSize = new Size(800, 600);
+        this.size = new Size();
+        this.position = new Position();
     }
     // task 4: add a method to resize the window
     // class syntax...
@@ -81,5 +81,20 @@ export class ProgramWindow {
         const finalWidth = Math.max(1, Math.min(newSize.width, maxWidth));
         const finalHeight = Math.max(1, Math.min(newSize.height, maxHeight));
         this.size.resize(finalWidth, finalHeight);
-      }
+    }
+    // task 5 add a method to move the window
+    // class syntax...
+    move(newPosition) {
+        console.log("newPosition: ", newPosition);
+        console.log("screenSize: ", this.screenSize);
+        console.log("size: ", this.size);
+        console.log("position: ", this.position);
+        const maxX = this.screenSize.width - this.size.width;
+        const maxY = this.screenSize.height - this.size.height;
+        const finalX = Math.max(0, Math.min(newPosition.x, maxX));
+        const finalY = Math.max(0, Math.min(newPosition.y, maxY));
+        this.position.move(finalX, finalY);
+        console.log("finalX: ", finalX, "finalY: ", finalY);
+    }
+
 }

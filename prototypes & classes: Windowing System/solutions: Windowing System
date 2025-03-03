@@ -73,4 +73,13 @@ export class ProgramWindow {
       this.size = new Size();
       this.position = new Position();
     }
+    // task 4: add a method to resize the window
+    // class syntax...
+    resize(newSize) {
+        const maxWidth = this.screenSize.width - this.position.x;
+        const maxHeight = this.screenSize.height - this.position.y;
+        const finalWidth = Math.max(1, Math.min(newSize.width, maxWidth));
+        const finalHeight = Math.max(1, Math.min(newSize.height, maxHeight));
+        this.size.resize(finalWidth, finalHeight);
+      }
 }

@@ -82,7 +82,7 @@ export class ProgramWindow {
         const finalHeight = Math.max(1, Math.min(newSize.height, maxHeight));
         this.size.resize(finalWidth, finalHeight);
     }
-    // task 5 add a method to move the window
+    // task 5: add a method to move the window
     // class syntax...
     move(newPosition) {
         console.log("newPosition: ", newPosition);
@@ -98,3 +98,13 @@ export class ProgramWindow {
     }
 
 }
+
+// task 6: change a program window
+// class syntax...
+export function changeWindow(ProgramWindow) {
+    const newSize = new Size(400, 300);
+    const newPosition = new Position(100, 150);
+    ProgramWindow.move(newPosition);
+    ProgramWindow.resize(newSize);
+    return ProgramWindow;
+  }
